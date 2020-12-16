@@ -98,6 +98,7 @@ session_start();
 								$sql = "SELECT * FROM userdata where UserAcc = '$user'";
 								$result = mysqli_query($dblink, $sql);
 								$row = @mysqli_fetch_row($result);
+								$user1 = @$row['user'];
 								$result = $dblink->query("select * from userdata where email='$email'");
 								$row=mysqli_fetch_array($result);
 								$data = $result->fetch_all();

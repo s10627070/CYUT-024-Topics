@@ -284,9 +284,7 @@ if (isset($_POST["submit"]))
 																				require_once '../Ecpay/Credit_CreateOrder.php';
 																				}
 																				else?>
-																				<script type="text/javascript"> 
-																				alert("訂購成功,系統已向您的郵箱發送了一封確認郵件!\n請登錄到您的郵箱查看！"); 
-																				window.location.href="../index.php"; 
+																				<script> window.location.href="../index.php"; </script> 
 																				</script> 
 																				<?php
 																				

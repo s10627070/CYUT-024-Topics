@@ -79,65 +79,65 @@ session_start();
 
 							<div style="color:red"><?php echo $error ?></div>
 							<form action="roombuy1.php" method="post">
+							<?php
+							$roomA=['豪華房'];
+							$plusA = ['0','1','2'];
+							$payA=['轉帳','信用卡'];
+								echo '姓名:(請填寫跟註冊時一樣的姓名)' . '<input type="text" name="uname" value="' .$_SESSION["uname"]. '"required>' . '<br>';
+								echo '輸入電話:(09xxxxxxxx):' .'<br>'. '<input type="text" id="phone" name="phone" pattern="[0-9]{2}[0-9]{8}">'.'<br>';
+								echo '選擇房型:';
+								if ($_POST["submit"] == '送出') {
+									$rooml = $_POST["rooml"];
+								}
+								echo '<select class="form-control selectpicker" name="rooml[]">';
+								echo '<value="" disabled selected>選擇房型</option>';
+								for ($h = 0;$h < count($roomA);$h++) {
+									echo '<option value="' . $roomA[$h] . '"';
+									if (!empty($_POST['rooml'])) {
+										if (in_array("$roomA[$h]", $_POST['rooml'])) echo "selected";
+									}
+									echo '>' . $roomA[$h];
+								}
+								echo '</select>';
+								echo '<br>';
+								
+								echo '加床:';
+								echo '<select class="form-control selectpicker" name="plus[]">';
+								echo '<option value="" disabled selected>0</option>';
+								for ($z = 0;$z < count($plusA);$z++) {
+									echo '<option value="' . $plusA[$z] . '"';
+									if (!empty($_POST['plus'])) {
+										if (in_array("$plusA[$z]", $_POST['plus'])) echo "selected";
+									}
+									echo '>' . $plusA[$z];
+								}
+								echo '</select>';
+								echo '<br>';
+								
+								echo '付款方式:';
+								echo '<select class="form-control selectpicker" name="pay[]">';
+								echo '<option value="" disabled selected>選擇付款方式</option>';
+								for ($z = 0;$z < count($payA);$z++) {
+									echo '<option value="' . $payA[$z] . '"';
+									if (!empty($_POST['pay'])) {
+										if (in_array("$payA[$z]", $_POST['pay'])) echo "selected";
+									}
+									echo '>' . $payA[$z];
+								}
+								echo '</select>';
+								echo '<br>';
+								?>
+								入住日期:<input type="date" value="<?= isset($_POST['date1']) ? $_POST['date1'] : ''; ?>" name="date1" min="<?= date('Y-m-d'); ?>"required>
 								<?php
-								$roomA=['豪華房'];
-								$plusA = ['0','1','2'];
-								$payA=['轉帳'];
-									echo '姓名:(請填寫跟註冊時一樣的姓名)' . '<input type="text" name="uname" value="' .$_SESSION["uname"]. '"required>' . '<br>';
-									echo '輸入電話:(09xxxxxxxx):' .'<br>'. '<input type="text" id="phone" name="phone" pattern="[0-9]{2}[0-9]{8}">'.'<br>';
-									echo '選擇房型:';
-									if ($_POST["submit"] == '送出') {
-										$rooml = $_POST["rooml"];
-									}
-									echo '<select class="form-control selectpicker" name="rooml[]">';
-									echo '<value="" disabled selected>選擇房型</option>';
-									for ($h = 0;$h < count($roomA); $h++) {
-										echo '<option value="' . $roomA[$h] . '"';
-										if (!empty($_POST['rooml'])) {
-											if (in_array("$roomA[$h]", $_POST['rooml'])) echo "selected";
-										}
-										echo '>' . $roomA[$h];
-									}
-									echo '</select>';
-									echo '<br>';
-									
-									echo '加床:';
-									echo '<select class="form-control selectpicker" name="plus[]">';
-									echo '<option value="" disabled selected>0</option>';
-									for ($z = 0;$z < count($plusA);$z++) {
-										echo '<option value="' . $plusA[$z] . '"';
-										if (!empty($_POST['plus'])) {
-											if (in_array("$plusA[$z]", $_POST['plus'])) echo "selected";
-										}
-										echo '>' . $plusA[$z];
-									}
-									echo '</select>';
-									echo '<br>';
-									
-									echo '付款方式:';
-									echo '<select class="form-control selectpicker" name="pay[]">';
-									echo '<option value="" disabled selected>選擇付款方式</option>';
-									for ($z = 0;$z < count($payA);$z++) {
-										echo '<option value="' . $payA[$z] . '"';
-										if (!empty($_POST['pay'])) {
-											if (in_array("$payA[$z]", $_POST['pay'])) echo "selected";
-										}
-										echo '>' . $payA[$z];
-									}
-									echo '</select>';
-									echo '<br>';
-									?>
-									<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-									入住日期:<input type="date" value="<?= isset($_POST['date1']) ? $_POST['date1'] : ''; ?>" name="date1" min="<?= date('Y-m-d'); ?>"required><br><br>
-									<script>
-									
-									</script>
-									<br>退房日期:<input type="date" value="<?= isset($_POST['date2']) ? $_POST['date2'] : ''; ?>" name="date2" min="<?= date('Y-m-d'); ?>" max="<?=date('Y-m-d', strtotime("+20 day", time()))?>"required>
-									<?php
-									echo '<br>';
-									echo '<input type="submit" name="submit" value="送出"/>';
-									echo '</form>';
-									?>
+								echo '<br>';
+								echo '<br>';
+								?>
+								退房日期:<input type="date" value="<?= isset($_POST['date2']) ? $_POST['date2'] : ''; ?>" name="date2" min="<?= date('Y-m-d'); ?>" max="<?=date('Y-m-d', strtotime("+20 day", time()))?>"required>
+								<?php
+								echo '<br>';
+								echo '<input type="submit" name="submit" value="送出"/>';
+								echo '</form>';
+								?>
 									</footer>
 								</div>
 							</div>

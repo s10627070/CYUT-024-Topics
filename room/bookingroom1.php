@@ -29,11 +29,10 @@ session_start();
 					<?php
 					$user1=$_SESSION["uname"];
 					include_once ('../dbset.inc.php');
-					$sql = "SELECT pay,sum FROM room where type='豪華房' and UserName= '$user1'";
+					$sql = "SELECT pay FROM room where type='豪華房' and UserName= '$user1'";
 					$result = mysqli_query($dblink, $sql);
 					$rowpay = $result->fetch_assoc();
-					$pay=@$rowpay['pay'];
-					$sum1=@$rowpay['sum'];			
+					$pay=@$rowpay['pay'];			
 					$pass = $dblink->query("SELECT pass FROM berry WHERE type ='豪華房' ");
 					$passrow=mysqli_fetch_array($pass);
 					$password1 = $pass->fetch_all();
@@ -41,7 +40,7 @@ session_start();
 					if(($_SESSION["user"]==""))
 					{
 					echo "<p style='color:gray;'>請先登入!</p>";
-					echo '<li><a href="../generic.html">登入</a></li>';
+					echo '<li><a href="../generic.html">l登入</a></li>';
 					echo '<li><a href="../registered.php">註冊</a></li>';
 					}
 					else{
@@ -50,17 +49,17 @@ session_start();
 					echo "<p style='color:gray;'>".$_SESSION["uname"]."</p>";//登入後出現
 					echo '<li><a href="../resetpass.php">更改密碼</a></li>';
 					echo '<li><a href="../logout.php">登出</a><li>';
-					if($pay=='尚未付款' && $sum1=='已訂房'){
-						echo '<li><a href="cancel2.php">取消訂房</a><li>';
+					if($pay=='已付款'){
+						echo '<li><a href="checkoutroom1.php">退房</a><li>';
 					}
-					else if($pay=='已付款' && $sum1 =='已訂房'){
-					echo '<li><a href="checkoutroom1.php">退房</a><li>';
+					else{
+					echo '<li><a href="cancel.php">取消訂房</a><li>';
 					}
 					
 					}
-					if($pwd!=null){
-					echo '<li><a href="../key/Room.key.setting1.php">忘記房門密碼</a><li>';
-					}
+				if($pwd!=null){
+					echo '<li><a href="../key/Room.key.setting2.php">忘記房門密碼</a><li>';
+				}
 					?>
 				</ul>
 			</nav>
@@ -87,16 +86,17 @@ session_start();
 						<div>
 							<div class="box">
 								<div class="image fit">
-								<img src="../images/room1.jpg" alt="" />	
+								<img src="../images/room2.jpg" alt="" />	
 								</div>
 								<div class="content">
 									<header class="align-center">
+										<p>打房間介紹</p>
 										<h2>豪華房</h2>
 										<h2>訂房資訊</h2>
 									</header>
 									<p>  </p>
 									<footer class="align-center">
-									<div style="color:red"><?php echo $msg ?></div>
+
 									<?php
 									$error = "";
 									$msg = "";
@@ -110,7 +110,7 @@ session_start();
 									$date2 = '';
 									$user1=$_SESSION["uname"];
 									include_once ('../dbset.inc.php');
-									$sql = "SELECT type,UserName,sum,phone,date1,date2,pay FROM room where type='豪華房' and UserName= '$user1' and sum='已訂房'";
+									$sql = "SELECT type,UserName,sum,phone,date1,date2,pay,roomid FROM room where type='豪華房' and UserName= '$user1' and sum='已訂房'";
 									$result = mysqli_query($dblink, $sql);
 									$row = $result->fetch_assoc();
 									$num=@$row['num'];
@@ -121,37 +121,42 @@ session_start();
 									$date1=@$row['date1'];
 									$date2=@$row['date2'];
 									$pay=@$row['pay'];
-
-									$sql = "SELECT pass,num FROM berry WHERE num='1'";
-									$result = mysqli_query($dblink, $sql);
-									$rowas = $result->fetch_assoc();
-									$pass =@$rowas['pass'];
+									$roomid=@$row['roomid'];
 									
-									echo "訂購人: " .$_SESSION["uname"]. "<br/>";
+									$sql = "SELECT  RtnCode,MerchantTradeNo FROM ecpay where RtnCode=1 and MerchantTradeNo='$roomid'";
+									$result1 = mysqli_query($dblink, $sql);
+									$rowaa = $result1->fetch_assoc();
+									$RtnCode=@$rowaa['RtnCode'];
+									$MerchantTradeNo1=@$rowaa['MerchantTradeNo'];
+									echo "訂購人: " .'root'. "<br/>";
 									echo "房間名稱: ". $type ."<br/>";
 									echo "入住日期: ". $date1 . "PM: 3:00以後"."<br/>";
 									echo "退房日期: ". $date2 . "AM: 11:30以前"."<br/>";
 									echo "電話:+886" .$phone ."<br/>";	
-									echo "付款狀態:" .$pay ."<br/>";
-									?>
-									<form action="bookingroom1.php" method="post">
-									<?php
-									//======== room key button =================================================
-									
-									if($pay == "已付款" && $pass !=NULL)
-									{
-										$key_pass = strval($_POST['aaa']);
-										       
-										echo '請輸入 4~6 位數房門密碼：<input type="text" name="aaa" pattern="[0-9]*"><br/>'; //textbox
-										include("../key/door.php");
-										door_key(1,$key_pass);
-										$key_pass=NULL;
+									echo "付款狀態:". $pay."<br/>";
+									//echo "roomid=" .$roomid."<br/>";
+									//echo "MerchantTradeNo=".$MerchantTradeNo1."<br/>";
+									//echo "rtn = ".$RtnCode."</br>";
+									if($RtnCode==1){
+										mysqli_query($dblink,"UPDATE room SET pay='已付款' WHERE roomid='$roomid'");
 									}
-									//=========================================================================
-									
-									echo '</form>';
+
 									
 									?>
+							<form action="bookingroom1.php" method="post">
+							<?php
+							//======== room key button =================================================		
+							if($pay == "已付款" && $pwd !=NULL)
+							{
+								$key_pass = strval($_POST['aaa']);		       
+								echo '請輸入 4~6 位數房門密碼：<input type="text" name="aaa" pattern="[0-9]*"><br/>'; //textbox
+								include("../key/door.php");
+								door_key(1,$key_pass);
+								$key_pass=NULL;
+							}
+							//=========================================================================
+							echo '</form>';
+							?>
 									</footer>
 								</div>
 							</div>

@@ -90,36 +90,22 @@ if (isset($_POST["submit"]))
 										$result = mysqli_query($dblink,"select date1,date2,type from room where type ='豪華房' AND sum='已訂房';");
 										$row1=mysqli_fetch_all($result);
 										$data = $result->fetch_all();
-										$temp = TRUE;
+										$temp = False;
 										if(count($row1) == 0)
 										{
 											$temp = TRUE;
 										}
 										else
 										{
-										foreach($row1 as $i)
-										{
-											if( $date1>=$i[0] && $date1 <= $i[1])
-											{ 
-												$temp = False;
-												break;
-											}
-											else if($date2>=$i[0] && $date2<=$i[1])
+											foreach($row1 as $i)
 											{
-												
-												$temp = FALSE; 
-												break;
+											if( $i[1] >= $date1 && $date1 >= $i[0])
+											{ $temp = False;
+												break;}
+												else
+												{ $temp = True; }
 											}
-											else if($i[0]>=$date1 && $i[1]<=$date2)
-											{
-												$temp = FALSE;
-												break;
-											}
-											else
-												$temp = TRUE;
 										}
-									}
-										
 							if(!$temp)
 								{ 
 								?><script type="text/javascript">alert("日期已無房間");window.location.href="../room/room1.php";</script><?php
@@ -174,11 +160,15 @@ if (isset($_POST["submit"]))
 																		$result = mysqli_query($dblink, $sql);
 																		$row = @mysqli_fetch_row($result);
 																		//$sql="insert into room set UserName='$uname',phone='$phone',date1='$date1',date2='$date2',sum='已訂房',totalprices='$totalprice',plus='$rplus' where type='$aroom'";
-																		$sql = "INSERT INTO room(num,type,UserName,phone,date1,date2,sum,totalprices,plus,pay) VALUES('','$aroom','$uname','$phone','$date1','$date2','已訂房','$totalprice','$rplus','尚未付款')";
+																		$yCode = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J');
+																		$orderid =  $yCode[intval(date('Y')) - 2011] .date('Ymd').substr(implode(NULL, array_map('ord', str_split(substr(uniqid(), 7, 13), 1))), 0, 5); //生成訂單號
+																		$sql = "INSERT INTO room(num,type,UserName,phone,date1,date2,sum,totalprices,plus,pay,roomid) VALUES('','$aroom','$uname','$phone','$date1','$date2','已訂房','$totalprice','$rplus','$rpay','$orderid')";
+																		
 																			if (mysqli_query($dblink, $sql))
 																			{
 																				
-																				?><script type="text/javascript">alert("訂房成功，請至首頁右邊MENU查看您的房間");window.location.href="../index.php";</script><?php
+																				?><script type="text/javascript">alert("訂房成功，請至首頁右邊MENU查看您的房間");//window.location.href="../index.php";</script><?php
+																			
 																			include_once ('../dbset.inc.php');
 																			$pname =$_POST['uname']; 
 																			global $dblink;
@@ -219,7 +209,7 @@ if (isset($_POST["submit"]))
 																				<th colspan='2'>匯款時，請在備註打上您訂房的姓名！</th>
 																				</tr>
 																				<tr>
-																				<td>姓名：</td>
+																				<td>名稱：</td>
 																				<td>".$UserName."</td>
 																				</tr>
 																				<tr>
@@ -253,10 +243,9 @@ if (isset($_POST["submit"]))
 																				※ 本館入房時間: 下午3:00。<br>
 																				※ 本館退房時間: 上午11:00。<br>
 																				※ 於當日前往入住前如有任何疑問請事先聯繫我們。<br>
-																				※未在時間內匯款者，系統將在預計入住當天下午15:00自動取消訂單。<br>
-																				※未依規定時間內退房，系統將於15:00自動幫您退房並喪失門鎖控制權。<br>
-																				※ 如離開房間請務必打開自行上網輸入密碼鎖門，如物品遺失一律自行負責。<br>
-																				※ 禁止攜帶任何寵物。<br>
+																				※未依規定時間內退房，將不能控制房門，請務必遵守。<br>
+																				※如離開房間請務必打開自行上網輸入密碼鎖門，如物品遺失一律自行負責。<br>
+																				※禁止攜帶任何寵物。<br>
 																				※ 客房內禁止開火烹煮食物。<br>
 																				※ 禁止喧嘩、轟趴、嫖妓或嗑藥等任何非法行為一經發現，將報警處理，並列入永久黑名單。<br>
 																				※ 房內之寢具家飾，如遭毀損、遺失，除照價賠償外並保留法律追訴權。<br>
@@ -275,17 +264,31 @@ if (isset($_POST["submit"]))
 																			
 																			if(!$mail->Send())
 																				{
-																					?><script type="text/javascript">alert("請填寫信箱地址");window.location.href="room1.php";</script><?php
+																					?><script type="text/javascript">alert("請填寫信箱地址");window.location.href="../room1.php";</script><?php
 																				}
 																				else
 																				{  
-																					mysqli_query($mysqli,"update userdata set getpasstime ='$getpasstime' where id='$uid'"); 	
+																					///mysqli_query($mysqli,"update userdata set getpasstime ='$getpasstime' where id='$uid'"); 	
+																					
 																				?> 
+																				
 																				<script type="text/javascript"> 
 																				alert("訂購成功,系統已向您的郵箱發送了一封確認郵件!\n請登錄到您的郵箱查看！"); 
-																				window.location.href="../index.php"; 
+																				
+																				
+																				//window.location.href="../index.php"; 
 																				</script> 
 																				<?php
+																				if($rpay=='信用卡')
+																				{
+																					require_once '../Ecpay/Credit_CreateOrder.php';
+																				}
+																				else?>
+																				
+																				<script> window.location.href="../index.php"; </script>
+																				</script> 
+																				<?php
+																				
 																				}
 																			} 
 																			else{

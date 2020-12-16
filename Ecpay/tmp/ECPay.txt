@@ -1006,3 +1006,183 @@ Array
     [TradeNo] => 2012161715153797
     [CheckMacValue] => 590487467B2A565B586FF055DE3810C7EE2BD3C1B8463E328CA6825BE3583E82
 )
+Array
+(
+    [CustomField1] => 
+    [CustomField2] => 
+    [CustomField3] => 
+    [CustomField4] => 
+    [MerchantID] => 2000132
+    [MerchantTradeNo] => J2020121650100
+    [PaymentDate] => 2020/12/16 18:52:59
+    [PaymentType] => Credit_CreditCard
+    [PaymentTypeChargeFee] => 36
+    [RtnCode] => 1
+    [RtnMsg] => 交易成功
+    [SimulatePaid] => 0
+    [StoreID] => 
+    [TradeAmt] => 1800
+    [TradeDate] => 2020/12/16 18:51:20
+    [TradeNo] => 2012161851204321
+    [CheckMacValue] => 78B4210947B0009D7BB2B8F5D982E32A2CD2BB8A5EC9D43C03B83AE7CF231F93
+)
+Array
+(
+    [CustomField1] => 
+    [CustomField2] => 
+    [CustomField3] => 
+    [CustomField4] => 
+    [MerchantID] => 2000132
+    [MerchantTradeNo] => J2020121648501
+    [PaymentDate] => 2020/12/16 21:05:45
+    [PaymentType] => Credit_CreditCard
+    [PaymentTypeChargeFee] => 16
+    [RtnCode] => 1
+    [RtnMsg] => 交易成功
+    [SimulatePaid] => 0
+    [StoreID] => 
+    [TradeAmt] => 800
+    [TradeDate] => 2020/12/16 21:04:55
+    [TradeNo] => 2012162104554995
+    [CheckMacValue] => 906CE7C4399A1A566947D698EF542637BB9D0EBC84AE20A3EEEF7991C122363F
+)
+Array
+(
+    [CustomField1] => 
+    [CustomField2] => 
+    [CustomField3] => 
+    [CustomField4] => 
+    [MerchantID] => 2000132
+    [MerchantTradeNo] => J2020121650575
+    [PaymentDate] => 2020/12/16 21:30:22
+    [PaymentType] => Credit_CreditCard
+    [PaymentTypeChargeFee] => 16
+    [RtnCode] => 1
+    [RtnMsg] => 交易成功
+    [SimulatePaid] => 0
+    [StoreID] => 
+    [TradeAmt] => 800
+    [TradeDate] => 2020/12/16 21:28:56
+    [TradeNo] => 2012162128565115
+    [CheckMacValue] => 5F56A88CE1C66614183117200EFA3AFCA85BE39E617928A1FAE986FE0E154F4F
+)
+Array
+(
+    [CustomField1] => 
+    [CustomField2] => 
+    [CustomField3] => 
+    [CustomField4] => 
+    [MerchantID] => 2000132
+    [MerchantTradeNo] => J2020121651102
+    [PaymentDate] => 2020/12/16 21:33:40
+    [PaymentType] => Credit_CreditCard
+    [PaymentTypeChargeFee] => 16
+    [RtnCode] => 1
+    [RtnMsg] => 交易成功
+    [SimulatePaid] => 0
+    [StoreID] => 
+    [TradeAmt] => 800
+    [TradeDate] => 2020/12/16 21:32:09
+    [TradeNo] => 2012162132095130
+    [CheckMacValue] => 7E90C8B0F8CF4EF2C780379B5E06BDD1FB2BE1ECC1FA6574CD06F77794164C1B
+)
+Array
+(
+    [CustomField1] => 
+    [CustomField2] => 
+    [CustomField3] => 
+    [CustomField4] => 
+    [MerchantID] => 2000132
+    [MerchantTradeNo] => J2020121655101
+    [PaymentDate] => 2020/12/16 22:29:00
+    [PaymentType] => Credit_CreditCard
+    [PaymentTypeChargeFee] => 16
+    [RtnCode] => 1
+    [RtnMsg] => 交易成功
+    [SimulatePaid] => 0
+    [StoreID] => 
+    [TradeAmt] => 800
+    [TradeDate] => 2020/12/16 22:28:14
+    [TradeNo] => 2012162228145390
+    [CheckMacValue] => 4DF031E084DF9D92420AC53C794D3D873A761BFBF67E00894CCC17BD1C9BEA90
+)
+Array
+(
+    [CustomField1] => 
+    [CustomField2] => 
+    [CustomField3] => 
+    [CustomField4] => 
+    [MerchantID] => 2000132
+    [MerchantTradeNo] => J2020121698535
+    [PaymentDate] => 2020/12/16 22:24:07
+    [PaymentType] => Credit_CreditCard
+    [PaymentTypeChargeFee] => 16
+    [RtnCode] => 1
+    [RtnMsg] => 交易成功
+    [SimulatePaid] => 0
+    [StoreID] => 
+    [TradeAmt] => 800
+    [TradeDate] => 2020/12/16 22:20:20
+    [TradeNo] => 2012162220205353
+    [CheckMacValue] => D45B81D23F4935D5CCFAEFACD51CCA099F3E82BC0CD12AC0520DEF54FC677ABF
+)
+Array
+(
+    [CustomField1] => 
+    [CustomField2] => 
+    [CustomField3] => 
+    [CustomField4] => 
+    [MerchantID] => 2000132
+    [MerchantTradeNo] => J2020121650995
+    [PaymentDate] => 2020/12/16 22:39:12
+    [PaymentType] => Credit_CreditCard
+    [PaymentTypeChargeFee] => 26
+    [RtnCode] => 1
+    [RtnMsg] => 交易成功
+    [SimulatePaid] => 0
+    [StoreID] => 
+    [TradeAmt] => 1300
+    [TradeDate] => 2020/12/16 22:38:32
+    [TradeNo] => 2012162238325432
+    [CheckMacValue] => C36042AFE0212149EE7EC21270045D8C718DEF86DDF566D6E1A522F965C34C7C
+)
+Array
+(
+    [CustomField1] => 
+    [CustomField2] => 
+    [CustomField3] => 
+    [CustomField4] => 
+    [MerchantID] => 2000132
+    [MerchantTradeNo] => J2020121657985
+    [PaymentDate] => 2020/12/16 22:49:18
+    [PaymentType] => Credit_CreditCard
+    [PaymentTypeChargeFee] => 16
+    [RtnCode] => 1
+    [RtnMsg] => 交易成功
+    [SimulatePaid] => 0
+    [StoreID] => 
+    [TradeAmt] => 800
+    [TradeDate] => 2020/12/16 22:48:15
+    [TradeNo] => 2012162248155446
+    [CheckMacValue] => ABEBDA71E642B02AD810509702E586E243747F6633432DB48FF64246E5D766FA
+)
+Array
+(
+    [CustomField1] => 
+    [CustomField2] => 
+    [CustomField3] => 
+    [CustomField4] => 
+    [MerchantID] => 2000132
+    [MerchantTradeNo] => J2020121610198
+    [PaymentDate] => 2020/12/16 22:58:35
+    [PaymentType] => Credit_CreditCard
+    [PaymentTypeChargeFee] => 16
+    [RtnCode] => 1
+    [RtnMsg] => 交易成功
+    [SimulatePaid] => 0
+    [StoreID] => 
+    [TradeAmt] => 800
+    [TradeDate] => 2020/12/16 22:52:37
+    [TradeNo] => 2012162252375466
+    [CheckMacValue] => 74FDF2C1AAE37555C2C76682591DE4A03B4C66F81509EC6BBA3F3128AAECD220
+)
