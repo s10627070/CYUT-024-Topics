@@ -1,0 +1,45 @@
+
+
+body {
+    
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;  
+    
+}
+
+#artbg {
+
+    position: absolute;
+    height: 250px;
+    width: 100%;
+    z-index: 1;
+    opacity: 0.5;
+    
+}
+
+#person {
+    
+    border-radius: 100px;
+    
+}
+
+#text {
+    
+    padding-bottom: 85px;
+    padding-left: 55px;
+    padding-right: 55px;
+    
+}
+
+#text li {
+    
+    list-style-type: none;
+    
+}
+
+p {
+    
+    font-size: 20px;
+    
+}

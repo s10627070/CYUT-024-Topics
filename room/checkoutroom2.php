@@ -30,6 +30,7 @@ if (mysqli_query($dblink, $sql)){
             $connect = ssh2_connect('10.42.0.51',22); // ip = 10.42.0.51, port= 22
             ssh2_auth_password($connect,'pi','sean1002');//user= pi, pass= sean1002
             $stream = ssh2_exec($connect,'python3 closedoor.py 2');// exec close door
+            mysqli_query($dblink, "UPDATE berry SET state=False WHERE num=2;");
         }
         ?><script type="text/javascript">alert("退房成功，歡迎下次再來");window.location.href="https://docs.google.com/forms/d/e/1FAIpQLSeIW-3CsnMv_JDwLoFUY4i_Ket75Mlbkw-YYKDQRhkaPMNN4w/viewform?usp=sf_link";</script><?php
     } 

@@ -90,22 +90,35 @@ if (isset($_POST["submit"]))
 										$result = mysqli_query($dblink,"select date1,date2,type from room where type ='豪華房' AND sum='已訂房';");
 										$row1=mysqli_fetch_all($result);
 										$data = $result->fetch_all();
-										$temp = False;
+										$temp = TRUE;
 										if(count($row1) == 0)
 										{
 											$temp = TRUE;
 										}
 										else
 										{
-											foreach($row1 as $i)
-											{
-											if( $i[1] >= $date1 && $date1 >= $i[0])
-											{ $temp = False;
-												break;}
-												else
-												{ $temp = True; }
+										foreach($row1 as $i)
+										{
+											if( $date1>=$i[0] && $date1 <= $i[1])
+											{ 
+												$temp = False;
+												break;
 											}
+											else if($date2>=$i[0] && $date2<=$i[1])
+											{
+												
+												$temp = FALSE; 
+												break;
+											}
+											else if($i[0]>=$date1 && $i[1]<=$date2)
+											{
+												$temp = FALSE;
+												break;
+											}
+											else
+												$temp = TRUE;
 										}
+									}
 										
 							if(!$temp)
 								{ 
@@ -161,7 +174,7 @@ if (isset($_POST["submit"]))
 																		$result = mysqli_query($dblink, $sql);
 																		$row = @mysqli_fetch_row($result);
 																		//$sql="insert into room set UserName='$uname',phone='$phone',date1='$date1',date2='$date2',sum='已訂房',totalprices='$totalprice',plus='$rplus' where type='$aroom'";
-																		$sql = "INSERT INTO room(num,type,UserName,phone,date1,date2,sum,totalprices,plus,pay) VALUES('','$aroom','$uname','$phone','$date1','$date2','已訂房','$totalprice','$rplus','$rpay')";
+																		$sql = "INSERT INTO room(num,type,UserName,phone,date1,date2,sum,totalprices,plus,pay) VALUES('','$aroom','$uname','$phone','$date1','$date2','已訂房','$totalprice','$rplus','尚未付款')";
 																			if (mysqli_query($dblink, $sql))
 																			{
 																				
@@ -240,9 +253,10 @@ if (isset($_POST["submit"]))
 																				※ 本館入房時間: 下午3:00。<br>
 																				※ 本館退房時間: 上午11:00。<br>
 																				※ 於當日前往入住前如有任何疑問請事先聯繫我們。<br>
-																				※未依規定時間內退房，將不能控制房門，請務必遵守。<br>
-																				※如離開房間請務必打開自行上網輸入密碼鎖門，如物品遺失一律自行負責。<br>
-																				※禁止攜帶任何寵物。<br>
+																				※未在時間內匯款者，系統將在預計入住當天下午15:00自動取消訂單。<br>
+																				※未依規定時間內退房，系統將於15:00自動幫您退房並喪失門鎖控制權。<br>
+																				※ 如離開房間請務必打開自行上網輸入密碼鎖門，如物品遺失一律自行負責。<br>
+																				※ 禁止攜帶任何寵物。<br>
 																				※ 客房內禁止開火烹煮食物。<br>
 																				※ 禁止喧嘩、轟趴、嫖妓或嗑藥等任何非法行為一經發現，將報警處理，並列入永久黑名單。<br>
 																				※ 房內之寢具家飾，如遭毀損、遺失，除照價賠償外並保留法律追訴權。<br>
@@ -261,7 +275,7 @@ if (isset($_POST["submit"]))
 																			
 																			if(!$mail->Send())
 																				{
-																					?><script type="text/javascript">alert("請填寫信箱地址");window.location.href="../room1.php";</script><?php
+																					?><script type="text/javascript">alert("請填寫信箱地址");window.location.href="room1.php";</script><?php
 																				}
 																				else
 																				{  

@@ -10,19 +10,8 @@ session_start();
 <?php
 $user1=$_SESSION["uname"];
 include_once ('../dbset.inc.php');
-$sql = "SELECT type,UserName,sum,phone,date1,date2,pay FROM room where type='豪華房' and UserName= '$user1' and sum='已訂房'";
-$result = mysqli_query($dblink, $sql);
-$row = $result->fetch_assoc();
-$num=@$row['num'];
-$UserName=@$row['UserName'];
-$type=@$row['type'];
-$phone=@$row['phone'];
-$sum=@$row['sum'];
-$date1=@$row['date1'];
-$date2=@$row['date2'];
-$pay=@$row['pay'];
 require ("../dbset.inc.php");
-$result = $dblink->query("update room set date1='',date2='',sum='已取消訂單',pay='' where UserName='$UserName'");
+$result = $dblink->query("update room set date1='',date2='',sum='已取消訂單',pay='' where UserName='$UserName' and type='豪華房';");
 $row = @mysqli_fetch_row($result);
 if ($result)
 {

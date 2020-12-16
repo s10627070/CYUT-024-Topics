@@ -1,0 +1,124 @@
+<!doctype html> 
+<html> 
+  <head> 
+    <!--藝術家展覽-->
+    <meta charset="utf-8"> 
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/101/favicon-96x96.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/topButton.css">
+    <link rel="stylesheet" href="css/interduce.css">
+    <link rel="stylesheet" href="css/artist/artistExhibition.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/jquery-3.5.1.js"></script>
+
+      <style media="screen">
+          #slider {
+              max-width: 700px;
+              margin:50px auto;
+          }
+      </style>
+
+  </head> 
+  
+  <body> 
+  
+        <div class="menu" style="padding: 0;">
+          <script>
+            $(document).ready(function() {
+                  $('.menu').load('menu.php')
+              })
+          </script>
+      </div> 
+      
+        <img  id="artbg" src="img/artistBackGround1.jpg" style="margin-top: -20px">
+        <img  id="person" src="img/artistL1.jpg" height="250px" width="350px" style="margin-top: -20px">
+      
+  
+  
+        <div class="artL1">
+          <script>
+            $(document).ready(function() {
+                  $('.artL1').load('artL1-menu.html')
+              })
+          </script>
+        </div>
+        <div class="row" style="margin: 0">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-10" id="exhibition" style="padding-bottom: 30px">
+          <div class="col-xs-12 col-sm-4">
+            <a href="http://99dac.com/exhibition-detail.php?id=141" title="前往詳細資訊"><img src="img/L1/L1exhibition1.jpg"></a>
+            <h3 align="center">《山林綠樹》陳炳臣創作個展</h3>
+            <p style="font-size: 18px">展期:2020-07-02 ─ 2020-07-28</p>
+            <p style="font-size: 18px">地點：99°藝術中心</p>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <a href="https://www.marieclaire.com.tw/lifestyle/art/50913/henri-cartier-bresson-china-exhibition" title="前往詳細資訊"><img src="img/L1/L1exhibition2.jpg"></a>
+            <h3 align="center">「布列松在中國1948-1949｜1958」</h3>
+            <p style="font-size: 18px">展期：2020.06.20-2020.11.01</p>
+            <p style="font-size: 18px">地點：臺北市立美術館三樓3A展區</p>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <a href="https://www.marieclaire.com.tw/lifestyle/art/50206/alanschaller-exhibition-2020?atcr=167ac1" title="前往詳細資訊"><img src="img/L1/L1exhibition3.jpg"></a>
+            <h3 align="center">《Metropolis大都會》攝影特展by Alan Schaller</h3>
+            <p style="font-size: 18px">展期：即日起至9月30日</p>
+            <p style="font-size: 18px">地點：台北徠卡之家，大安區青田街六巷3號</p>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <a href="https://www.marieclaire.com.tw/lifestyle/art/51085?atcr=a1a918" title="前往詳細資訊"><img src="img/L1/L1exhibition4.jpg"></a>
+            <h3 align="center">新風景4.0-Sven Drühl斯芬．杜爾首個展</h3>
+            <p style="font-size: 18px">展期:即日起至8月30日</p>
+            <p style="font-size: 18px">地點：台北市大安路一段101巷10號1樓</p>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <a href="https://www.marieclaire.com.tw/lifestyle/art/50516" title="前往詳細資訊"><img src="img/L1/L1exhibition5.jpg"></a>
+            <h3 align="center">2020 X-Site計畫：多重真實 ─《膜》</h3>
+            <p style="font-size: 18px">展期：即日起至8月9日</p>
+            <p style="font-size: 18px">地點：北美館戶外廣場</p>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <a href="https://www.marieclaire.com.tw/lifestyle/art/50005" title="前往詳細資訊"><img src="img/L1/L1exhibition6.jpg"></a>
+            <h3 align="center">西班牙奇幻攝影大師尤傑尼歐特展</h3>
+            <p style="font-size: 18px">展期：即日起至9月13日</p>
+            <p style="font-size: 18px">地點：華山1914文化創意園區東二C館</p>
+          </div>
+        </div>
+        <div class="col-xs-1"></div>   
+        </div>
+        <div class="footer">
+          <script>
+            $(document).ready(function() {
+                  $('.footer').load('footer.php')
+              })
+          </script>
+        </div>
+      
+
+
+        <script src="js/jquery-3.5.1.js"></script>
+        <button type="button" id="BackTop" class="toTop-arrow"></button>
+        <script>
+            $(function(){
+                $('#BackTop').click(function(){ 
+                $('html,body').animate({scrollTop:0}, 333);
+            });
+            $(window).scroll(function() {
+                if ( $(this).scrollTop() > 300 ){
+                    $('#BackTop').fadeIn(222);
+                } else {
+                    $('#BackTop').stop().fadeOut(222);
+                }
+                }).scroll();
+            });
+        </script>
+      
+
+      
+
+
+
+
+  </body>
+</html>

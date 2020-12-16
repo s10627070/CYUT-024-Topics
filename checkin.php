@@ -36,8 +36,8 @@ session_start();
 			<section id="One" class="wrapper style3">
 				<div class="inner">
 					<header class="align-center">
-						<p>Welcome To</p>
-						<h2>無人旅館</h2>
+						<p>Welcome To 無人旅館</p>
+						<h2>Check In</h2>
 					</header>
 				</div>
 			</section>

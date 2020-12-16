@@ -32,8 +32,6 @@ $pass = $dblink->query("SELECT pass FROM berry WHERE type ='$type' ");
 $passrow=mysqli_fetch_array($pass);
 $password1 = $pass->fetch_all();
 $pwd = @$passrow['pass'];
-
-
 if(isset($_POST["submit"]))
 {	
 	require'passporttest1.php';
@@ -86,7 +84,7 @@ if(isset($_POST["submit"]))
 						{
 							if($passport1!=$passport)
 							{
-							?><script type="text/javascript">alert("沒有此人");window.location.href="checkin.php";</script><?php
+							?><script type="text/javascript">alert("沒有身份證");window.location.href="checkin.php";</script><?php
 							}
 							else
 							{

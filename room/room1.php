@@ -91,7 +91,7 @@ session_start();
 									}
 									echo '<select class="form-control selectpicker" name="rooml[]">';
 									echo '<value="" disabled selected>選擇房型</option>';
-									for ($h = 0;$h < count($roomA);$h++) {
+									for ($h = 0;$h < count($roomA); $h++) {
 										echo '<option value="' . $roomA[$h] . '"';
 										if (!empty($_POST['rooml'])) {
 											if (in_array("$roomA[$h]", $_POST['rooml'])) echo "selected";
@@ -127,12 +127,12 @@ session_start();
 									echo '</select>';
 									echo '<br>';
 									?>
-									入住日期:<input type="date" value="<?= isset($_POST['date1']) ? $_POST['date1'] : ''; ?>" name="date1" min="<?= date('Y-m-d'); ?>"required>
-									<?php
-									echo '<br>';
-									echo '<br>';
-									?>
-									退房日期:<input type="date" value="<?= isset($_POST['date2']) ? $_POST['date2'] : ''; ?>" name="date2" min="<?= date('Y-m-d'); ?>" max="<?=date('Y-m-d', strtotime("+20 day", time()))?>"required>
+									<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+									入住日期:<input type="date" value="<?= isset($_POST['date1']) ? $_POST['date1'] : ''; ?>" name="date1" min="<?= date('Y-m-d'); ?>"required><br><br>
+									<script>
+									
+									</script>
+									<br>退房日期:<input type="date" value="<?= isset($_POST['date2']) ? $_POST['date2'] : ''; ?>" name="date2" min="<?= date('Y-m-d'); ?>" max="<?=date('Y-m-d', strtotime("+20 day", time()))?>"required>
 									<?php
 									echo '<br>';
 									echo '<input type="submit" name="submit" value="送出"/>';

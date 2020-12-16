@@ -1,0 +1,24 @@
+p {
+
+    font-size: 1px;
+    text-align: center;
+
+}
+
+footer {
+    
+    background-color: #E0E0E0;
+    padding-top: 35px;
+    line-height: 5px;
+    text-align: center;
+  
+}
+
+hmtl, body {
+
+  height: 100%;
+  margin: 0 auto; 
+  width: 100%;
+  background-color: #E0E0E0;
+  
+}

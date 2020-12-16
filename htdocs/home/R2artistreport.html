@@ -1,0 +1,110 @@
+<!doctype html> 
+<html> 
+  <head> 
+    <!--藝術家消息-->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/101/favicon-96x96.png"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/topButton.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/interduce.css">
+    <link rel="stylesheet" href="css/artist/artistReport.css">
+    <script src="js/jquery-3.5.1.js"></script>
+
+      <style media="screen">
+          #slider {
+              max-width: 700px;
+              margin:50px auto;
+          }
+      </style>
+
+  </head> 
+  
+  <body> 
+  
+  
+        <div class="menu" style="padding: 0;">
+          <script>
+            $(document).ready(function() {
+                  $('.menu').load('menu.php')
+              })
+          </script>
+      </div> 
+      
+        <img  id="artbg" src="img/artistBackGround1.jpg" style="margin-top: -20px">
+        <img  id="person" src="img/artistR2.jpg" height="250px" width="350px" style="margin-top: -20px">
+      
+        
+        
+        <div class="artR2">
+          <script>
+            $(document).ready(function() {
+                  $('.artR2').load('artR2-menu.html')
+              })
+          </script>
+        </div>
+      
+
+            
+      <div class="row" style="margin: 0">
+      <div class="col-xs-1"></div>     
+      <div class="row col-xs-10" id="reportPicture" style="padding-bottom: 30px">
+        <div class="col-xs-12 col-sm-4">
+          <a href="https://www.mirrormedia.mg/story/20180411bus009/" title="前往新聞連結"><img src="img/report1.jpg"></a>
+          <h3 align="center">鏡週刊</h3>
+          <p style="font-size: 18px" align="center">【職場人語】朽木亦可雕 浪人雕刻家梁平正</p>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <a href="https://www.mirrormedia.mg/story/20180212bus005/" title="前往新聞連結"><img src="img/report2.jpg"></a>
+          <h3 align="center">鏡週刊</h3>
+          <p style="font-size: 18px" align="center">【藝術臉譜】隱居後蛻變 梁平正靠雕刻刀重生</p>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <a href="https://www.chinatimes.com/realtimenews/20180205003170-260405" title="前往新聞連結"><img src="img/report3.jpg"></a>
+          <h3 align="center">中時電子報</h3>
+          <p style="font-size: 18px" align="center">刻出生命力 梁平正讓木雕飛起來</p>
+        </div>
+      </div>
+      <div class="col-xs-1"></div> 
+      </div>
+      
+      
+        <div class="footer">
+            <script>
+              $(document).ready(function() {
+                    $('.footer').load('footer.php')
+                })
+            </script>
+        </div>
+        
+      
+      
+        <script src="js/jquery-3.5.1.js"></script>
+        <button type="button" id="BackTop" class="toTop-arrow"></button>
+        <script>
+            $(function(){
+                $('#BackTop').click(function(){ 
+                $('html,body').animate({scrollTop:0}, 333);
+            });
+            $(window).scroll(function() {
+                if ( $(this).scrollTop() > 300 ){
+                    $('#BackTop').fadeIn(222);
+                } else {
+                    $('#BackTop').stop().fadeOut(222);
+                }
+                }).scroll();
+            });
+        </script>
+      
+
+
+     
+
+
+
+
+  </body>
+</html>

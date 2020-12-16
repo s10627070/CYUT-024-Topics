@@ -1,0 +1,33 @@
+body {
+    
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;  
+    
+}
+
+#artist {
+
+    padding-top: 55px;
+    padding-bottom: 185px;
+	width: 100%;
+    height: auto;
+    
+}
+
+#artist  a:hover{
+
+	color: blue;
+}
+
+#artist th a:hover{
+  
+  background-color: red;
+}
+
+table{
+  
+  margin-left: auto;
+  margin-right: auto;
+  
+}

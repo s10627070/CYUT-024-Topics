@@ -1,0 +1,124 @@
+<!doctype html> 
+<html> 
+  <head> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/topButton.css">
+    <link rel="stylesheet" href="css/menu.css"> 
+    <link rel="stylesheet" href="css/contactus.css">
+    
+    
+    
+
+      <style media="screen">
+          #slider {
+              max-width: 700px;
+              margin:50px auto;
+          }
+      </style>
+  </head> 
+  
+  <body> 
+  
+
+        
+      <div class="menu">
+        <script src="js/jquery-3.5.1.js"></script>
+        <script>
+          $(document).ready(function() {
+                $('.menu').load('menu.html')
+            })
+        </script>
+      </div> 
+      
+      <div id="content">
+        
+        <table border="0">
+        
+            <tr>
+                
+              <td colspan="2">
+              
+                <p id="note">藝術展覽、美術工藝、品茗賞藝，從生活中體現藝術文化之美。 歡迎預約賞作、茶敘、業務討論。
+
+              </td>
+              
+            </tr>
+            
+            <tr id="textmap">
+              
+              <td>
+                <p>FB：藏山101 @cangshan101  
+                <p>TEL：0989 294 650
+                <p>LINE：@443szutn
+                <p>E-MAIL：allylin59@gmail.com
+                <p>ADDRESS：台中市大里區科技路1-38號
+                
+              </td>
+      
+              <td>
+                  <div align=center>
+                  <iframe 
+                      width="450" 
+                      height="300"
+                      frameborder="0" 
+                      style="border:0" 
+                      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA41G06v6qYsmH8xt2vjuVcWi6Lz7VxVhk&q=412台中市大里區科技路1號" 
+                      allowfullscreen>
+                  </iframe>
+                  </div>
+              </td>
+              
+            </tr>
+   
+            <tr>
+              <td colspan="2" id="conform">
+                <p>聯絡我們</p>
+                    <form method="post" action="#">
+                      姓名：<input type="text" name="name"><br><br>
+                      電話：<input type="number" name="tel"><br><br>
+                      電子郵件：<input type="email" name="email"><br><br>
+                      訊息：<br><textarea rows="15" cols="50"></textarea><br><br>
+                      <input type="submit" value="送出">
+                    </form>
+              </td>
+            </tr>
+          
+        </table>
+      
+
+
+
+
+      </div>
+
+
+    <iframe src="footer.html" width="100%" height="50px" scrolling="no" frameborder="0"></iframe>
+    
+    
+        <script src="js/jquery-3.5.1.js"></script>
+        <button type="button" id="BackTop" class="toTop-arrow"></button>
+        <script>
+            $(function(){
+                $('#BackTop').click(function(){ 
+                $('html,body').animate({scrollTop:0}, 333);
+            });
+            $(window).scroll(function() {
+                if ( $(this).scrollTop() > 300 ){
+                    $('#BackTop').fadeIn(222);
+                } else {
+                    $('#BackTop').stop().fadeOut(222);
+                }
+                }).scroll();
+            });
+        </script>
+
+
+ 
+
+
+
+
+
+  </body>
+</html>

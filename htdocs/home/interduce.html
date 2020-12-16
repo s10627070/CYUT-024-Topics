@@ -1,0 +1,99 @@
+<!doctype html> 
+<html> 
+  <head> 
+    <meta charset="utf-8"> 
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/topButton.css">
+    <link rel="stylesheet" href="css/interduce.css">
+    <script src="js/jquery-3.5.1.js"></script>
+
+      <style media="screen">
+          #slider {
+              max-width: 700px;
+              margin:50px auto;
+          }
+      </style>
+
+  </head> 
+  
+  <body> 
+      <div class="menu">
+        <script>
+          $(document).ready(function() {
+                $('.menu').load('menu.html')
+            })
+        </script>
+      </div> 
+      
+     <div id ="content">
+   <div id="gallery">
+      <div class="media">
+   	    <img class="media__image" src="img/artistL1.png" alt="" />  
+		  <div class="media__body">
+            <h2><a href="artL1.html">陳炳臣</a></h2> 
+		  </div>
+		</div>
+		<div class="media">
+          <img class="media__image" src="img/artistC1.png" alt="" />
+            <div class="media__body">
+              <h2><a href="artC1.html">梁平正</a></h2> 
+		    </div>
+		</div>
+		<div class="media">
+          <img class="media__image" src="img/artistR1.jpg" alt="" />
+            <div class="media__body">
+              <h2><a href="artR1.html">吳金維</a></h2>  
+		    </div>
+		</div>
+        <div class="media">
+          <img class="media__image" src="img/artistL2.jpg" alt="" />
+            <div class="media__body">
+              <h2><a href="artL2.html">施繼堯</a></h2>  
+		    </div>
+		</div>
+		<div class="media">
+          <img class="media__image" src="img/artistC2.jpg" alt="" />
+            <div class="media__body">
+              <h2><a href="artC2.html">陳金旺</a></h2>   
+            </div>
+		</div>
+		<div class="media">
+          <img class="media__image" src="img/artistR2.jpg" alt="" />
+            <div class="media__body">
+              <h2><a href="artR2.html">陳婉萍</a></h2> 
+		    </div>
+		</div>	  
+    </div> 
+ </div>
+      
+
+
+
+          <iframe src="footer.html" width="100%" height="50px" scrolling="no" frameborder="0"></iframe>
+          
+          
+          
+        <script src="js/jquery-3.5.1.js"></script>
+        <button type="button" id="BackTop" class="toTop-arrow"></button>
+        <script>
+            $(function(){
+                $('#BackTop').click(function(){ 
+                $('html,body').animate({scrollTop:0}, 333);
+            });
+            $(window).scroll(function() {
+                if ( $(this).scrollTop() > 300 ){
+                    $('#BackTop').fadeIn(222);
+                } else {
+                    $('#BackTop').stop().fadeOut(222);
+                }
+                }).scroll();
+            });
+        </script>
+
+
+
+
+
+
+  </body>
+</html>

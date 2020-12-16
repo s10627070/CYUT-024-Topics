@@ -1,0 +1,269 @@
+<!doctype html> 
+<html> 
+  <head> 
+    <meta charset="utf-8"> 
+    <script src="js/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" href="css/menu.css"> 
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/jquery.hiSlider.min.css">
+    <link rel="stylesheet" href="css/index.css"> 
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index-style.css">
+    <style type="text/css">
+      @media screen and (max-width:768px){
+          *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+          }
+           .news p {
+             width: 100%;
+	 
+              }
+          .recommend p{
+            width: 100%;
+            
+              }
+          .message {
+            width: 100%
+
+        }
+          #single {
+              
+              width: 100%;
+          }
+        .carousel{
+          max-width: 300px;
+        }
+        
+        .news {
+          width: 100%;
+          
+              }
+        table{
+          width: 100%;
+          
+        }
+
+
+    }
+  
+ 
+</style>
+  </head> 
+  <body> 
+      <div class="menu">
+        <script>
+          $(document).ready(function() {
+                $('.menu').load('menu.html')
+            })
+        </script>
+      </div> 
+  <div id="content">
+   
+     <div id="wrap">
+		    <ul class="hiSlider hiSlider2">
+		        <li class="hiSlider-item"><img src="images/d.jpg" ></li>
+		        <li class="hiSlider-item"><img src="images/e.jpg"></li>
+                 <li class="hiSlider-item"><img src="images/a.jpg" ></li>
+		        <li class="hiSlider-item"><img src="images/f.jpg"></li>
+                <li class="hiSlider-item"><img src="images/g.jpg"></li>
+		    </ul>
+		</div>
+    
+    
+    <div class="news">
+      
+      <div class="text-effect">
+	     <span>最</span><span>新</span><span>消</span><span>息</span>
+	 </div>
+      
+      
+     <table cellspacing="0" rules=rows frame=hsides >
+       
+  
+   <tbody >
+    <tr>
+      <td style="width: 30%">2020-09-20</td>
+      <td style="width: 130%"><a href="https://www.ceramics.ntpc.gov.tw/xmdoc/cont?xsmsid=0J148497613881029302&sid=0K254571951867326634">藝遊三鶯──2020陶藝衛星展</a></td>
+      
+    </tr>
+    <tr>
+      <td style="width: 30%">2020-09-20</td>
+      <td style="width: 130%"><a href="https://digital.ceramics.ntpc.gov.tw/zh-tw/Collection/2_41.htm?3">亞熱帶花園：彩繪陶瓷展</a></td>
+      
+      
+    </tr>
+    <tr>
+      <td style="width: 30%">2020-09-20</td>
+      <td style="width: 130%"><a href="http://www.dadun.culture.taichung.gov.tw/Exhibition/ActiveDetail?g=AAD0000045">藝文研習成果展－釉上瓷器彩繪師生展</a></td>
+      
+      
+    </tr>
+    <tr>
+      <td style="width: 30%">2020-09-20</td>
+      <td style="width: 130%"><a href="https://www.accupass.com/event/1704220930571629177873">你我都是藝術家，瓷盤瓷杯彩繪</a></td>
+     
+     
+    </tr>
+    <tr>
+      <td style="width: 30%">2020-09-20</td>
+      <td style="width: 130%"><a href="https://web.tainan.gov.tw/ZuojhenDistrict/News_Content.aspx?n=8503&s=79384">周炎山瓷版水墨個展~墨瓷難忘</a></td>
+      
+     
+    </tr>
+    <tr>
+      <td style="width: 30%">2020-09-20</td>
+      <td style="width: 130%"><a href="http://southnpm.kingfor.com.tw/ExhibitionsDetailC003110.aspx?Cond=665a94e9-ba08-40ba-8211-d2c2ba809569&appname=Exhibition3112">泥土的坐標－院藏陶瓷展</a></td>
+      
+     
+    </tr>
+    <tr>
+      <td style="width: 30%">2020-09-20</td>
+      <td style="width: 130%"><a href="http://www.fgsbmc.org.tw/GauD.aspx?PNO=2019050007">金門明清暨當代青花瓷典藏展</a></td>
+      
+     
+    </tr>
+    <tr>
+       <td style="width: 30%">2020-09-20</td>
+      <td style="width: 130%"><a href="https://cultureexpress.taipei/ViewEvent.aspx?id=8126">揚帆萬里—日本伊萬里瓷器特展</a></td>
+     
+      
+    </tr>
+    <tr>
+       <td style="width: 30%">2020-09-20</td>
+      <td style="width: 130%"><a href="https://www.yujing.gov.tw/News_Content.aspx?n=20746&s=4312573">周炎山瓷版水墨個展~墨瓷難忘</a></td>
+     
+     
+    </tr>
+    <tr>
+      <td style="width: 30%">2020-09-20</td>
+      <td style="width: 130%"><a href="https://www.travel.taipei/zh-tw/activity/details/19914">溫馨之旅~張秀足布藝、瓷趣創作展</a></td>
+      
+     
+    </tr>
+  </tbody>
+ 
+</table>
+ <script> 
+   $(function(){ 
+   var $table = $('table'); 
+   var currentPage = 0;//当前页默认值为0 
+   var pageSize = 5;//每一页显示的数目 
+   $table.bind('paging',function(){ 
+    $table.find('tbody tr').hide().slice(currentPage*pageSize,(currentPage+1)*pageSize).show(); 
+   }); 
+   var sumRows = $table.find('tbody tr').length; 
+   var sumPages = Math.ceil(sumRows/pageSize);//总页数 
+
+   var $pager = $('<div class="page"></div>'); //新建div，放入a标签,显示底部分页码 
+   for(var pageIndex = 0 ; pageIndex<sumPages ; pageIndex++){ 
+    $('<a href="#" rel="external nofollow" id="pageStyle" onclick="changCss(this)"><span>'+(pageIndex+1)+'</span></a>').bind("click",{"newPage":pageIndex},function(event){ 
+    currentPage = event.data["newPage"]; 
+    $table.trigger("paging"); 
+    //触发分页函数 
+    }).appendTo($pager); 
+    $pager.append(" "); 
+    } 
+    $pager.insertAfter($table); 
+    $table.trigger("paging"); 
+
+    //默认第一页的a标签效果 
+    var $pagess = $('#pageStyle'); 
+    $pagess[0].style.backgroundColor="#4949e8"; 
+    $pagess[0].style.color="#ffffff"; 
+  }); 
+
+  //a链接点击变色，再点其他回复原色 
+   function changCss(obj){ 
+   var arr = document.getElementsByTagName("a"); 
+   for(var i=0;i<arr.length;i++){ 
+   if(obj==arr[i]){ //当前页样式 
+   obj.style.backgroundColor="#4949e8"; 
+   obj.style.color="#ffffff"; 
+   } 
+   else 
+   { 
+   arr[i].style.color=""; 
+   arr[i].style.backgroundColor=""; 
+   } 
+   } 
+   } 
+  </script>  
+  </div>
+  <div class="recommend">
+      <div class="text-effect">
+	     <span>新</span><span>作</span><span>推</span><span>薦</span>
+	 </div>
+    
+           <div id="single" class="carousel slide" data-ride="carousel" data-shift="1">
+		  <div id="single-quad" class="carousel slide" data-ride="carousel" data-shift="1">
+		    <div class="carousel-inner">
+		      <ul class="row item active">
+                    <li class="col-xs-3 one">
+                      <img src="image/home-1.jpg" class="img-responsive">
+                    </li>
+                    <li class="col-xs-3 two">
+                      <img src="image/home-3.jpg" class="img-responsive">
+                    </li>
+                    <li class="col-xs-3 three">
+                      <img src="image/home-4.jpg" class="img-responsive">
+                    </li>
+                    <li class="col-xs-3 four">
+                      <img src="image/home2.jpg" class="img-responsive">
+                    </li>
+		      </ul>
+                <ul class="row item">
+                      <li class="col-xs-3 five">
+                        <img src="image/home-1.jpg" class="img-responsive">
+                      </li>
+                      <li class="col-xs-3 six">
+                        <img src="image/home-3.jpg" class="img-responsive">
+                      </li>
+                      <li class="col-xs-3 seven">
+                        <img src="image/home-4.jpg" class="img-responsive">
+                      </li>
+                      <li class="col-xs-3 eight">
+                        <img src="image/home2.jpg" class="img-responsive">
+                      </li>
+                  </ul>
+		    </div>
+
+                  <a class="carousel-control left" href="#single-quad" data-slide="next">Previous</a>
+                  <a class="carousel-control right" href="#single-quad" data-slide="prev">Next</a>
+		  </div>
+        </div>
+    </div>
+    </div>
+ 
+  <div id="footer">
+      </div>
+       <script src="js/jquery.1.9.1.js"></script>
+	<script src="js/jquery.hiSlider.min.js"></script>
+	<script>
+	   
+	    $('.hiSlider2').hiSlider({
+	        isFlexible: true,
+	        mode: 'fade',
+	        isSupportTouch: false,
+	        isShowTitle: false,
+	        isShowPage: false,
+	        titleAttr: function(curIdx){
+	            return $('img', this).attr('alt');
+	        }
+	    });
+	    
+	</script>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    
+        <script>window.jQuery || document.write('<\/script>')</script>
+        <script type="text/javascript" src="https://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="js/index.js">
+        
+    </script>
+     <iframe src="footer.html" width="100%" height="50px" scrolling="no" frameborder="0"></iframe>
+ 
+    
+  </body>
+     
+</html>

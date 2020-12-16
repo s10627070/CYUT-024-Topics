@@ -1,0 +1,329 @@
+<!doctype html> 
+<html> 
+  <head> 
+    <meta charset="utf-8"> 
+    <script src="js/jquery-3.5.1.js"></script>
+  <link rel="stylesheet" href="css/menu.css"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<link rel="stylesheet" href="css/jquery.hiSlider.min.css">
+    	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index-style.css">
+<style>
+  body,html {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    
+    
+  }
+  
+ 
+  #content{
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+    position: absolute;
+  }
+    li{
+		    list-style: none;
+		}
+		li img{
+		    display: block;
+		    margin: 0 auto;
+		}
+		#wrap{
+            margin: 0 auto;
+		    width: 100%;
+		    min-width: 300px;
+		   
+		    background: #fefefe;
+            border: 1px solid red;
+		}
+		.hiSlider{
+		    overflow: hidden;
+		    height: 400px;
+		    width: 500px;
+		    background: #eee;
+            margin:0 auto;
+		}
+		.hiSlider-item{
+		    float: left;
+		}
+  
+  .news{
+    width: 100%;
+    height: 280px;
+    border: 1px solid blue;
+    
+  }
+    table{
+      
+	 width:49%;
+	 text-align:center;
+      margin: 0 auto;
+      
+      
+	 }
+ table tr th,td{
+     text-align: center;
+	 height:40px;
+	 line-height:30px;
+	 border:1px solid #ccc;
+	 }
+  #pageStyle{
+	 display:inline-block;
+	 width:32px;
+	 height:32px;
+	 border:1px solid #CCC;
+	 line-height:32px;
+	 text-align:center;
+     
+   
+	 color:#999;
+	 margin-top:20px;
+   
+      
+	 text-decoration:none;
+  
+ 
+	 }
+  #pageStyle:hover{
+	  background-color:#CCC;
+	  }
+  #pageStyle .active{
+	  background-color:#0CF;
+	  color:#ffffff;
+   
+	  }
+.page {
+	text-align: center;
+}
+
+  .recommend{
+    width: 100%;
+    height: auto;
+    border: 1px solid green;
+    
+    
+  }
+  
+    </style>
+    
+    
+    
+    
+  </head> 
+  
+  <body> 
+  
+
+      <div class="menu">
+          <header>
+              <ul>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="interduce.html">藏‧時間</a></li>
+                <li><a href="tea.html">賞器品茶</a></li>
+                <li><a href="sale.html">藏家閣</a></li>
+                <li><a href="contactus.html">聯繫我們</a></li>
+              </ul>
+          </header>
+      </div> 
+      
+    
+    
+  <div id="content">
+    <div id="wrap">
+		    <ul class="hiSlider hiSlider2">
+		        <li class="hiSlider-item"><img src="images/a.jpg" alt="11111"></li>
+		        <li class="hiSlider-item"><img src="images/b.jpg" alt="22222"></li>
+		        <li class="hiSlider-item"><img src="images/c.jpg" alt="33333"></li>
+		        <li class="hiSlider-item"><img src="images/d.jpg" alt="44444"></li>
+		        <li class="hiSlider-item"><img src="images/e.jpg" alt="55555"></li>
+		    </ul>
+		</div>
+    
+    <div class="news">
+       <table cellspacing="0">
+  <thead>
+    <tr>
+      <th>標題</th>
+      <th>更新時間</th>
+      
+    </tr>
+  </thead>
+   <tbody>
+    <tr>
+      <td><a href="https://travel.taichung.gov.tw/zh-tw/Event/NewsDetail/6406/%E8%87%BA%E4%B8%AD%E8%B3%BC%E7%89%A9%E7%AB%B6%E8%B3%BD%E9%81%8A%E7%A8%8B%E6%B4%BB%E5%8B%95%E5%B0%88%E8%BB%8A%E7%8D%B2%E7%8D%8E%E5%90%8D%E5%96%AE%E5%85%AC%E5%B8%83-">臺中購物競賽遊程活動專車獲獎名單公布!</a></td>
+      <td>2020-09-20</td>
+      
+    </tr>
+    <tr>
+      <td><a href="https://travel.taichung.gov.tw/zh-tw/Event/NewsDetail/6406/%E8%87%BA%E4%B8%AD%E8%B3%BC%E7%89%A9%E7%AB%B6%E8%B3%BD%E9%81%8A%E7%A8%8B%E6%B4%BB%E5%8B%95%E5%B0%88%E8%BB%8A%E7%8D%B2%E7%8D%8E%E5%90%8D%E5%96%AE%E5%85%AC%E5%B8%83-">臺中購物競賽遊程活動專車獲獎名單公布!</a></td>
+      <td>2020-09-20</td>
+      
+    </tr>
+    <tr>
+      <td><a href="https://travel.taichung.gov.tw/zh-tw/Event/NewsDetail/6278/%E9%9B%99%E5%B4%8E%E9%83%A8%E8%90%BD%E5%9F%8B%E4%BC%8F%E5%9D%AA%E7%99%BB%E5%B1%B1%E6%AD%A5%E9%81%93%E8%A1%8C%E9%8A%B7%E6%8E%A8%E5%BB%A3%E6%B4%BB%E5%8B%95">雙崎部落埋伏坪登山步道行銷推廣活動</a></td>
+      <td>2020-09-20</td>
+      
+    </tr>
+    <tr>
+      <td><a href="https://travel.taichung.gov.tw/zh-tw/Event/NewsDetail/6406/%E8%87%BA%E4%B8%AD%E8%B3%BC%E7%89%A9%E7%AB%B6%E8%B3%BD%E9%81%8A%E7%A8%8B%E6%B4%BB%E5%8B%95%E5%B0%88%E8%BB%8A%E7%8D%B2%E7%8D%8E%E5%90%8D%E5%96%AE%E5%85%AC%E5%B8%83-">臺中購物競賽遊程活動專車獲獎名單公布!</a></td>
+      <td>2020-09-20</td>
+     
+    </tr>
+    <tr>
+      <td><a href="https://travel.taichung.gov.tw/zh-tw/Event/NewsDetail/6406/%E8%87%BA%E4%B8%AD%E8%B3%BC%E7%89%A9%E7%AB%B6%E8%B3%BD%E9%81%8A%E7%A8%8B%E6%B4%BB%E5%8B%95%E5%B0%88%E8%BB%8A%E7%8D%B2%E7%8D%8E%E5%90%8D%E5%96%AE%E5%85%AC%E5%B8%83-">臺中購物競賽遊程活動專車獲獎名單公布!</a></td>
+      <td>2020-09-20</td>
+     
+    </tr>
+    <tr>
+      <td><a href="https://travel.taichung.gov.tw/zh-tw/Event/NewsDetail/6056/%E8%87%BA%E4%B8%AD%E5%AE%89%E5%BF%83%E6%97%85%E9%81%8A-%E4%B8%AD%E5%B8%82%E5%BA%9C%E6%95%AC%E9%82%80%E5%9C%8B%E4%BA%BA%E4%BE%86%E8%87%BA%E4%B8%AD%E8%A7%80%E5%85%89%E4%BD%8F%E5%AE%BF-">臺中安心旅遊，中市府敬邀國人來臺中觀光住宿。</a></td>
+      <td>2020-09-20</td>
+     
+    </tr>
+    <tr>
+      <td><a href="https://travel.taichung.gov.tw/zh-tw/Event/NewsDetail/6406/%E8%87%BA%E4%B8%AD%E8%B3%BC%E7%89%A9%E7%AB%B6%E8%B3%BD%E9%81%8A%E7%A8%8B%E6%B4%BB%E5%8B%95%E5%B0%88%E8%BB%8A%E7%8D%B2%E7%8D%8E%E5%90%8D%E5%96%AE%E5%85%AC%E5%B8%83-">臺中購物競賽遊程活動專車獲獎名單公布!</a></td>
+      <td>2020-09-20</td>
+     
+    </tr>
+    <tr>
+      <td><a href="https://travel.taichung.gov.tw/zh-tw/Event/NewsDetail/6406/%E8%87%BA%E4%B8%AD%E8%B3%BC%E7%89%A9%E7%AB%B6%E8%B3%BD%E9%81%8A%E7%A8%8B%E6%B4%BB%E5%8B%95%E5%B0%88%E8%BB%8A%E7%8D%B2%E7%8D%8E%E5%90%8D%E5%96%AE%E5%85%AC%E5%B8%83-">臺中購物競賽遊程活動專車獲獎名單公布!</a></td>
+      <td>2020-09-20</td>
+      
+    </tr>
+    <tr>
+      <td><a href="https://travel.taichung.gov.tw/zh-tw/Event/NewsDetail/6406/%E8%87%BA%E4%B8%AD%E8%B3%BC%E7%89%A9%E7%AB%B6%E8%B3%BD%E9%81%8A%E7%A8%8B%E6%B4%BB%E5%8B%95%E5%B0%88%E8%BB%8A%E7%8D%B2%E7%8D%8E%E5%90%8D%E5%96%AE%E5%85%AC%E5%B8%83-">臺中購物競賽遊程活動專車獲獎名單公布!</a></td>
+      <td>2020-09-20</td>
+     
+    </tr>
+    <tr>
+      <td><a href="https://travel.taichung.gov.tw/zh-tw/Event/NewsDetail/6406/%E8%87%BA%E4%B8%AD%E8%B3%BC%E7%89%A9%E7%AB%B6%E8%B3%BD%E9%81%8A%E7%A8%8B%E6%B4%BB%E5%8B%95%E5%B0%88%E8%BB%8A%E7%8D%B2%E7%8D%8E%E5%90%8D%E5%96%AE%E5%85%AC%E5%B8%83-">臺中購物競賽遊程活動專車獲獎名單公布!</a></td>
+      <td>2020-09-20</td>
+     
+    </tr>
+  </tbody>
+ 
+</table>
+    
+    </div>
+    
+  <div class="recommend">
+     <div id="single" class="carousel slide" data-ride="carousel" data-shift="1">
+		  <div id="single-quad" class="carousel slide" data-ride="carousel" data-shift="1">
+		    <div class="carousel-inner">
+		      <ul class="row item active">
+                    <li class="col-xs-3 one">
+                      <img src="image/home-1.jpg" class="img-responsive">
+                    </li>
+                    <li class="col-xs-3 two">
+                      <img src="image/home-3.jpg" class="img-responsive">
+                    </li>
+                    <li class="col-xs-3 three">
+                      <img src="image/home-4.jpg" class="img-responsive">
+                    </li>
+                    <li class="col-xs-3 four">
+                      <img src="image/home2.jpg" class="img-responsive">
+                    </li>
+		      </ul>
+                <ul class="row item">
+                      <li class="col-xs-3 five">
+                        <img src="image/home-1.jpg" class="img-responsive">
+                      </li>
+                      <li class="col-xs-3 six">
+                        <img src="image/home-3.jpg" class="img-responsive">
+                      </li>
+                      <li class="col-xs-3 seven">
+                        <img src="image/home-4.jpg" class="img-responsive">
+                      </li>
+                      <li class="col-xs-3 eight">
+                        <img src="image/home2.jpg" class="img-responsive">
+                      </li>
+                  </ul>
+		    </div>
+
+                  <a class="carousel-control left" href="#single-quad" data-slide="prev">Previous</a>
+                  <a class="carousel-control right" href="#single-quad" data-slide="next">Next</a>
+		  </div>
+        </div>
+    
+    </div>
+    
+    </div>
+    
+    <script>
+  $(function(){
+	 var $table = $('table');
+	 var currentPage = 0;//当前页默认值为0
+	 var pageSize = 4;//每一页显示的数目
+	 $table.bind('paging',function(){
+		 $table.find('tbody tr').hide().slice(currentPage*pageSize,(currentPage+1)*pageSize).show();
+	 });	 
+	 var sumRows = $table.find('tbody tr').length;
+	 var sumPages = Math.ceil(sumRows/pageSize);//总页数
+	 
+	 var $pager = $('<div class="page"></div>');  //新建div，放入a标签,显示底部分页码
+	 for(var pageIndex = 0 ; pageIndex<sumPages ; pageIndex++){
+		 $('<a href="#" id="pageStyle" οnclick="changCss(this)"><span>'+(pageIndex+1)+'</span></a>').bind("click",{"newPage":pageIndex},function(event){
+			 currentPage = event.data["newPage"];
+			 $table.trigger("paging");
+			   //触发分页函数
+			 }).appendTo($pager);
+			 $pager.append(" ");
+		 }	 
+		 $pager.insertAfter($table);
+		 $table.trigger("paging");
+		 
+		 //默认第一页的a标签效果
+		 var $pagess = $('#pageStyle');
+		 $pagess[0].style.backgroundColor="#0080FF";
+		 $pagess[0].style.color="#ffffff";
+         
+         
+});
+ 
+//a链接点击变色，再点其他回复原色
+  function changCss(obj){
+	var arr = document.getElementsByTagName("a");
+	for(var i=0;i<arr.length;i++){	
+	 if(obj==arr[i]){       //当前页样式
+	  obj.style.backgroundColor="#006B00";
+	  obj.style.color="#ffffff";
+	}
+	 else
+	 {
+	   arr[i].style.color="";
+	   arr[i].style.backgroundColor="";
+	 }
+	}
+ }	  
+</script>
+    <script src="js/jquery.1.9.1.js"></script>
+	<script src="js/jquery.hiSlider.min.js"></script>
+	<script>
+	   
+	    $('.hiSlider2').hiSlider({
+	        isFlexible: true,
+	        mode: 'fade',
+	        isSupportTouch: false,
+	        isShowTitle: false,
+	        isShowPage: false,
+	        titleAttr: function(curIdx){
+	            return $('img', this).attr('alt');
+	        }
+	    });
+	    
+	</script>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    
+        <script>window.jQuery || document.write('<\/script>')</script>
+        <script type="text/javascript" src="https://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="js/index.js">
+        
+    </script>
+  </body>
+</html>

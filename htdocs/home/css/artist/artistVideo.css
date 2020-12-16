@@ -1,0 +1,36 @@
+hmtl, body {
+
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;     
+  
+}
+
+/*藝術家圖片、背景*/
+#artbg {
+    
+    position: absolute;
+    height: 250px;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    
+}
+
+#person {
+    
+    border-radius: 100px;
+    
+}
+
+p {
+    
+    text-align: center;
+    
+}
+
+iframe {
+    
+    padding-top: 500px;
+    
+}

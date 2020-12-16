@@ -1,0 +1,84 @@
+#artist {
+    padding-top: 45px;
+    padding-left: 75px;
+    padding-right: 75px;
+    padding-bottom: 45px;
+    height: auto;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*body {
+    background-color: skyblue
+}*/
+
+/*.gallery {
+    width: 800px;
+    height: 500px;
+    margin: 15% auto;
+}
+
+.gallery img {
+    margin: 0 auto;
+    width: 500px;    
+}*/
+
+#name {
+    
+    font-size: 25px;
+    
+}
+
+.gallery {
+    
+    padding-bottom: 50px;
+    
+}
+
+.gallery-for {
+	width: 750px;
+	height: 300px;
+	margin: 30px auto 1px;
+	overflow: hidden;
+}
+
+.gallery-for img {
+	width: 500px;
+	min-height: 100%;
+    margin: auto;
+}
+
+.gallery-nav {
+	width: 650px;
+	height: 85px;
+	margin: auto;
+}
+
+.gallery-nav img {
+    width: 200px;
+    height: 150px;
+}
+
+.gallery-nav .slick-track {
+	height: 90px;
+}
+
+.slick-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 50;
+    margin-top: -12px;
+}
+
+.slick-prev {
+	left: 0;
+    margin: auto;
+} 
+
+.slick-next {
+	right: 0;
+    margin: auto;
+}

@@ -29,10 +29,11 @@ session_start();
 					<?php
 					$user1=$_SESSION["uname"];
 					include_once ('../dbset.inc.php');
-					$sql = "SELECT pay FROM room where type='豪華房' and UserName= '$user1'";
+					$sql = "SELECT pay,sum FROM room where type='豪華房' and UserName= '$user1'";
 					$result = mysqli_query($dblink, $sql);
 					$rowpay = $result->fetch_assoc();
-					$pay=@$rowpay['pay'];			
+					$pay=@$rowpay['pay'];
+					$sum1=@$rowpay['sum'];			
 					$pass = $dblink->query("SELECT pass FROM berry WHERE type ='豪華房' ");
 					$passrow=mysqli_fetch_array($pass);
 					$password1 = $pass->fetch_all();
@@ -49,11 +50,11 @@ session_start();
 					echo "<p style='color:gray;'>".$_SESSION["uname"]."</p>";//登入後出現
 					echo '<li><a href="../resetpass.php">更改密碼</a></li>';
 					echo '<li><a href="../logout.php">登出</a><li>';
-					if($pay=='已付款'){
-						echo '<li><a href="checkoutroom1.php">退房</a><li>';
+					if($pay=='尚未付款' && $sum1=='已訂房'){
+						echo '<li><a href="cancel2.php">取消訂房</a><li>';
 					}
-					else{
-					echo '<li><a href="cancel2.php">取消訂房</a><li>';
+					else if($pay=='已付款' && $sum1 =='已訂房'){
+					echo '<li><a href="checkoutroom1.php">退房</a><li>';
 					}
 					
 					}
@@ -90,7 +91,6 @@ session_start();
 								</div>
 								<div class="content">
 									<header class="align-center">
-										<p>打房間介紹</p>
 										<h2>豪華房</h2>
 										<h2>訂房資訊</h2>
 									</header>
@@ -132,6 +132,7 @@ session_start();
 									echo "入住日期: ". $date1 . "PM: 3:00以後"."<br/>";
 									echo "退房日期: ". $date2 . "AM: 11:30以前"."<br/>";
 									echo "電話:+886" .$phone ."<br/>";	
+									echo "付款狀態:" .$pay ."<br/>";
 									?>
 									<form action="bookingroom1.php" method="post">
 									<?php

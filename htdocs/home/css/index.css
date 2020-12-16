@@ -1,0 +1,182 @@
+ body,html {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed; 
+  }
+
+#content{
+    width: 100%;
+    height: auto;
+    /*border: 1px solid black;*/
+   
+  }
+
+li{
+    list-style: none;
+  }
+li img{
+	display: block;
+    margin: 0 auto;
+  }
+#wrap{
+  
+  margin: 0 auto;
+  width: 100%;
+  min-width: 300px;
+  background: #fefefe;
+  /*border: 1px solid red;*/
+  }
+.hiSlider{
+  
+  overflow: hidden;
+  height:400px;
+  width: 100%;
+  background: #e1dbd6;
+  margin:0 auto;
+  
+  }
+#wrap li{
+  padding-right: 100px;
+}
+
+
+.hiSlider-item{
+  float:left;
+  }
+
+.news {
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+  margin: 0 auto;
+ /* border: 1px solid green;*/
+ 
+      
+  }
+
+.recommend {
+  height: auto;
+  padding-top: 5px;
+  margin-left: 0 auto;
+  margin-top: 15px;
+  /*border-style:solid;*/
+  /*border-color: red;
+  border: 1px solid red;*/
+  }
+/*
+.news p {
+  font-weight: bold;
+  width: 45%;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  background-color: antiquewhite;
+  border-style:groove;
+  font-size: 30px;
+  text-align: center;
+  
+  }
+*/
+
+	
+.text-effect{
+  
+  color:#223843;
+  font-family: 'Microsoft JhengHei';
+  font-size: 48px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 auto;
+  position: relative;
+}
+.text-effect span{
+  margin-top: 30px;
+  display: inline-block;
+  animation: animate 0.5s linear infinite both;
+}
+		
+		
+@keyframes animate{
+  0%, 50%, 100%{ transform: rotate(0deg) scale(1); }
+  25%{ transform: rotate(4deg) scale(0.98); }
+  75%{ transform: rotate(-4deg) scale(1.02); }
+}
+@media only screen and (max-width: 990px){
+  .text-effect{ font-size: 100px; }
+}
+@media only screen and (max-width: 767px){
+  .text-effect{ font-size: 80px; }
+}
+@media only screen and (max-width: 479px){
+  .text-effect{ font-size: 60px; }
+}
+@media only screen and (max-width: 359px){
+  .text-effect{ font-size: 45px; }
+}
+/*
+.recommend p { 
+  font-weight: bold;
+  width: 45%;
+  margin: 0 auto;
+  background-color: beige;
+  border-style:groove;
+  font-size: 30px; 
+  text-align: center;
+    
+  }
+*/
+.message {
+  overflow:auto;
+  margin: 0 auto;
+  height: 200px;
+  width: 50%;
+  background-color: #F0F0F0;
+  text-align: center;
+
+  }
+
+/***table**/
+table{
+  width:50%;
+  text-align:center;
+  margin: 0 auto;
+   
+  }
+ table tr th,td{
+   text-align: center;
+   height:38px;
+   line-height:30px;
+   /*border:1px solid #ccc;*/
+   font-size: 20px;
+  }
+
+table tr{
+  
+  border-style:  dotted;
+  
+}
+
+#pageStyle{
+  display:inline-block;
+  width:32px;
+  height:32px;
+  border:1px solid #CCC;
+  line-height:32px;
+  text-align:center;
+  color:#999;
+  margin-top:20px;
+  text-decoration:none;
+}
+#pageStyle:hover{
+  background-color:#CCC;
+}
+#pageStyle .active{
+  background-color:#0CF;
+  color:#ffffff;  
+}
+.page {
+  text-align: center;
+}

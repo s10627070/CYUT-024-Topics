@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+  
+}
+hmtl, body {
+  height: 100%;
+  margin: 0 auto; 
+  width: 100%;
+  background-color: rgb(255,255,255);
+  
+}
+.menu {
+  
+  width: auto;
+  margin: auto;
+  height: auto;
+  padding-top: 10px;
+}
+
+header ul{
+  
+  display: flex;
+  justify-content: space-evenly;  
+}  
+header a{
+  
+  color: inherit; /*移除超連結顏色*/
+  display: block; /*<a>填滿<li>*/
+  font-size: 30px;
+  color: rgb(0,0,0);
+  padding: 10px;
+  text-decoration: none; /*移除超連結底線*/
+}
+
+header ul{
+  position: relative;
+  background-color: rgb(255,255,255);
+  list-style: none; /*移除項目符號*/
+  margin: 0;
+  padding: 0;
+}
+
+header ul a:hover { /* 滑鼠滑入按鈕變色*/
+  background-color: rgb(0,0,0);
+  color: white;
+}
+
+/*
+#footer{
+  
+  background-color: gray;
+  height: 100px;
+　position: relative;
+　margin-top: -100px;
+  
+
+}
+*/

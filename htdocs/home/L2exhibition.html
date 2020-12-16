@@ -1,0 +1,83 @@
+<!doctype html> 
+<html> 
+  <head> 
+    <!--藝術家展覽-->
+    <meta charset="utf-8"> 
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/101/favicon-96x96.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/topButton.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/interduce.css">
+    <link rel="stylesheet" href="css/artist/artistExhibition.css">
+    <script src="js/jquery-3.5.1.js"></script>
+
+      <style media="screen">
+          #slider {
+              max-width: 700px;
+              margin:50px auto;
+          }
+      </style>
+
+  </head> 
+  
+  <body> 
+  
+        <div class="menu" style="padding: 0;">
+          <script>
+            $(document).ready(function() {
+                  $('.menu').load('menu.php')
+              })
+          </script>
+      </div> 
+      
+        <img  id="artbg" src="img/artistBackGround1.jpg" style="margin-top: -20px">
+        <img  id="person" src="img/artistL2.jpg" height="250px" width="350px" style="margin-top: -20px">
+      
+  
+  
+      <div class="artL2">
+          <script>
+            $(document).ready(function() {
+                  $('.artL2').load('artL2-menu.html')
+              })
+          </script>
+        </div> 
+      
+      
+            <h1 align="center" style="margin-top: 130px; margin-bottom: 130px;">暫無消息</h1>
+
+      <div class="footer">
+            <script>
+              $(document).ready(function() {
+                    $('.footer').load('footer.php')
+                })
+            </script>
+        </div>
+
+
+        <script src="js/jquery-3.5.1.js"></script>
+     <button type="button" id="BackTop" class="toTop-arrow"></button>
+        <script>
+            $(function(){
+                $('#BackTop').click(function(){ 
+                $('html,body').animate({scrollTop:0}, 333);
+            });
+            $(window).scroll(function() {
+                if ( $(this).scrollTop() > 300 ){
+                    $('#BackTop').fadeIn(222);
+                } else {
+                    $('#BackTop').stop().fadeOut(222);
+                }
+                }).scroll();
+            });
+        </script>
+      
+
+
+
+
+  </body>
+</html>

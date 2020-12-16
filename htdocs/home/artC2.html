@@ -1,0 +1,112 @@
+<!doctype html> 
+<html> 
+  <head> 
+    <meta charset="utf-8"> 
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/101/favicon-96x96.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/artistinterduce.css">
+    <link rel="stylesheet" href="css/artAbout.css">
+
+
+    
+
+  </head> 
+  
+  <body> 
+    <?php require_once 'menu.php'; ?>
+      
+      
+      <img  id="artbg" src="img/artistBackGround1.jpg" style="margin-top: -20px">
+      <img  id="person" src="img/artistC2.jpg" height="250px" width="350px" style="margin-top: -20px">
+      
+      
+          
+        <div class="artC2">
+          <script>
+            $(document).ready(function() {
+                  $('.artC2').load('artC2-menu.html')
+              })
+          </script>
+        </div>
+    
+        
+        
+        
+        <div id="text" style="padding-bottom: 30px">
+            <ul>
+                <li><h2>關於</h2>
+                    <ul>
+                        <p>陳金旺利用的全是台灣生產的木材，這點亦賦予作品一種在地的歸屬價值感，畫家可以透過描繪在地風情記錄生活、生態環境的美好想像，梁平正則是透過雕刻與材質的選擇，呈現立體的生活奇想，觀看作品，不單單僅是視覺的延伸，木頭香味迎面撲來，視覺牽動嗅覺，嗅覺渲染視覺，更多一份貼近台灣在地的情感。</p>
+                        <p>梁平正之所以接觸到木雕，似乎也是注定的一場相遇，憑直覺與敏銳度摸索自己的一套創作技法。在梁平正眼中，材質是表現內心作品所呈現的過程，他曾說：「東西外表的形象並不真實，真實的是東西內在的本質，藉此重新尋找雕塑面對當代文化下的一種新的可能性。」</p>
+                        <p>在雕塑的世界中，他還玩得不夠盡興，還有太多等待著被實現的想法，從他這幾年的創作發展看來，梁平正的雕塑之路依然還有許多值得被發掘、被看見的獨特。他亦不把自己侷限在木雕領域，以木雕為母體，翻制的不鏽鋼作品獨樹一格，散發當代美感張力，粗獷的造形中融合動中取靜的和諧。</p>
+                    </ul>
+                </li>
+                
+                <br>
+                <hr size="2.5" color="black">
+                <br>
+                
+                <li><h2>展覽與作品</h2>
+                    <ul><h3>2020</h3>
+                        <p> 藝術有愛-藝挺伯立歐」特展受彰化縣文化局邀請於「彰化縣立美術館」，作品《綠能》(30F)義賣捐贈彰化縣喜樂小兒麻痺關懷協會(2020/09/16-10/11)</p>
+                        <p>「台灣當代一年展」(台灣視覺藝術協會)於花博公園爭艷館(2020/09/12-09/20)</p>
+                        <p>「山林綠樹」陳炳臣創作個展於台北99°藝術中心(2020/07/02-07/28)</p>
+                        <p>「蘭陽珍視愛禮兩岸三地邀請展」於宜蘭安永心食館(2020/06/12-09/02)</p>
+                        <p>「蘭陽美術學會珍視愛禮交流展」於宜蘭縣文化中心(2020/05/20-06/07)</p>
+                    </ul>
+                    
+                    <ul><h3>2019</h3>
+                        <p>「台灣當代一年展」(台灣視覺藝術協會)於花博公園爭艷館(2019/08/31-09/08)</p>
+                        <p>「桃園市美術教育學會會員聯展」受桃園市美術教育學會邀請於「桃園市客家文化館」(2019/08/03-08/27)</p>
+                        <p>「2019蘭陽美術學會愜藝交流展」受蘭陽美術學會邀請於「宜蘭縣文化中心」(2019/05/24-06/04)</p>
+                    </ul>
+                
+                <br>
+                <hr size="2.5" color="black">
+                <br>
+                
+                <li><h2>獲獎</h2>
+                    <ul>
+                        <p>2014「台新銀行文化藝術基金會」 ，提名 ，臺北 ，臺灣</p>
+                        <p>1999「裕隆金質獎」 ，入選 ，臺灣</p>
+                        <p>1983「第八屆雄獅美術」 ，新人獎 ，臺灣</p>
+                    </ul>
+                </li>
+            </ul>  
+        </div>
+
+        <div class="footer">
+            <script>
+              $(document).ready(function() {
+                    $('.footer').load('footer.php')
+                })
+            </script>
+        </div>
+
+      
+
+
+
+      <script src="js/jquery-3.5.1.js"></script>
+      <button type="button" id="BackTop" class="toTop-arrow"></button>
+        <script>
+            $(function(){
+                $('#BackTop').click(function(){ 
+                $('html,body').animate({scrollTop:0}, 333);
+            });
+            $(window).scroll(function() {
+                if ( $(this).scrollTop() > 300 ){
+                    $('#BackTop').fadeIn(222);
+                } else {
+                    $('#BackTop').stop().fadeOut(222);
+                }
+                }).scroll();
+            });
+        </script>
+      
+
+
+
+
+  </body>
+</html>

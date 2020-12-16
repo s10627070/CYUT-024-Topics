@@ -1,0 +1,67 @@
+hmtl, body {
+
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;     
+  
+}
+
+/*藝術家圖片、背景*/
+#artbg {
+    
+    position: absolute;
+    height: 250px;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    
+}
+
+#person {
+    
+    border-radius: 100px;
+    
+}
+
+p {
+    
+    text-align: center;
+    
+}
+
+iframe {
+    
+    padding-top: 500px;
+    
+}
+
+#exhibition {
+    
+    padding-top: 35px;
+    padding-bottom: 100px;
+    
+}
+
+#exhibition img {
+    
+    height: 250px;
+    width: 300px;
+    margin: 0 auto;
+    display:  flex;
+    align-items: center;
+    justify-content:  center;
+    
+}
+
+#exhibition td {
+    
+    padding-left: 35px;
+    padding-right: 35px;
+    
+}
+
+#exhibition li {
+    
+    list-style: none;
+    
+}

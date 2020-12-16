@@ -33,10 +33,10 @@ session_start();
 					$result = mysqli_query($dblink, $sql);
 					$rowpay = $result->fetch_assoc();
 					$pay=@$rowpay['pay'];			
-					$pass = $dblink->query("SELECT pass FROM berry WHERE type ='一般房' ");
+					/*$pass = $dblink->query("SELECT pass FROM berry WHERE type ='一般房' ");
 					$passrow=mysqli_fetch_array($pass);
 					$password1 = $pass->fetch_all();
-					$pwd = @$passrow['pass'];		
+					$pwd = @$passrow['pass'];		*/
 					if(($_SESSION["user"]==""))
 					{
 					echo "<p style='color:gray;'>請先登入!</p>";
@@ -57,9 +57,9 @@ session_start();
 					}
 					
 					}
-					if($pwd!=null){
+				/*	if($pwd!=null){
 					echo '<li><a href="../key/Room.key.setting2.php">忘記房門密碼</a><li>';
-					}
+					}*/
 					?>
 				</ul>
 			</nav>
@@ -96,7 +96,7 @@ session_start();
 									</header>
 									<p>  </p>
 									<footer class="align-center">
-									<div style="color:red"><?php echo $msg ?></div>
+
 									<?php
 									$error = "";
 									$msg = "";
@@ -110,7 +110,7 @@ session_start();
 									$date2 = '';
 									$user1=$_SESSION["uname"];
 									include_once ('../dbset.inc.php');
-									$sql = "SELECT type,UserName,sum,phone,date1,date2,pay FROM room where type='一般房' and UserName= '$user1' and sum='已訂房'";
+									$sql = "SELECT type,UserName,sum,phone,date1,date2,pay,roomid FROM room where type='一般房' and UserName= '$user1' and sum='已訂房'";
 									$result = mysqli_query($dblink, $sql);
 									$row = $result->fetch_assoc();
 									$num=@$row['num'];
@@ -121,23 +121,33 @@ session_start();
 									$date1=@$row['date1'];
 									$date2=@$row['date2'];
 									$pay=@$row['pay'];
-
-									$sql = "SELECT pass,num FROM berry WHERE num='2'";
-									$result = mysqli_query($dblink, $sql);
-									$rowas = $result->fetch_assoc();
-									$pass =@$rowas['pass'];
+									$roomid=@$row['roomid'];
 									
-									echo "訂購人: " .$_SESSION["uname"]. "<br/>";
+									$sql = "SELECT  RtnCode,MerchantTradeNo FROM ecpay where RtnCode='1' and MerchantTradeNo='$roomid'";
+									$result1 = mysqli_query($dblink, $sql);
+									$rowaa = $result1->fetch_assoc();
+									$RtnCode=@$rowaa['RtnCode'];
+									$MerchantTradeNo1=@$rowaa['MerchantTradeNo'];
+									echo "訂購人: " .'root'. "<br/>";
 									echo "房間名稱: ". $type ."<br/>";
 									echo "入住日期: ". $date1 . "PM: 3:00以後"."<br/>";
 									echo "退房日期: ". $date2 . "AM: 11:30以前"."<br/>";
-									echo "電話:+886" .$phone ."<br/>";
+									echo "電話:+886" .$phone ."<br/>";	
+									echo "付款狀態:" .$pay ."<br/>";
+									echo "roomid=" .$roomid."<br/>";
+									echo "MerchantTradeNo=".$MerchantTradeNo1."<br/>";
+									if($RtnCode=='1'){
+									$result = $dblink->query("update room set pay='已付款' where UserName='$checkname'");
+									$row = @mysqli_fetch_row($result);
+									echo "RtnCode=已付款"."<br/>";}
+
+									
 									?>
-									<form action="bookingroom2.php" method="post">
+							<!--		<form action="bookingroom2.php" method="post">-->
 									<?php
 									//======== room key button =================================================
 									
-									if($pay == "已付款" && $pass !=NULL)
+									/*if($pay == "已付款" && $pass !=NULL)
 									{
 										$key_pass = strval($_POST['aaa']);
 										       
@@ -147,7 +157,7 @@ session_start();
 										$key_pass=NULL;
 									}
 									//=========================================================================
-									
+									*/
 									echo '</form>';
 									
 									?>

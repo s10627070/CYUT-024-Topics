@@ -10,10 +10,10 @@ session_start();
 <?php
 $user1=$_SESSION["uname"];
 include_once ('../dbset.inc.php');
-$result = $dblink->query("update room set date1='',date2='',sum='已取消訂單',pay='' where UserName='$user1'");
+$result = $dblink->query("update room set date1='',date2='',sum='已取消訂單',pay='' where UserName='$user1' and type='一般房';");
 if ($result)
 {
-?><script type="text/javascript">alert("成功");window.location.href="../index.php";</script><?php
+?><script type="text/javascript">alert("訂單已取消！");window.location.href="../index.php";</script><?php
 }
 else{
 echo "<p style='color:red;'>取消失敗!</p>";

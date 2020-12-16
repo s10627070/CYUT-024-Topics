@@ -138,7 +138,7 @@ session_start();
 				<div class="container">
 					<ul class="icons">
 						<li><a href="https://www.facebook.com/profile.php?id=100054559314466" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="https://www.instagram.com/s10627070/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="https://www.instagram.com/smp_0000/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 						<!---<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li> --->
 					</ul>
 				</div>

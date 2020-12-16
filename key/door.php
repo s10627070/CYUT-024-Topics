@@ -9,7 +9,6 @@ error_reporting(E_ALL);*/
 include("../dbset.inc.php");
 $result = mysqli_query($dblink,"select state,pass from berry where num =".strval($num));
 $row=mysqli_fetch_array($result);
-$data = $result->fetch_all();
 $state=@$row['state'];
 $pass = @$row['pass'];
 //========================== End =====================================
@@ -24,15 +23,8 @@ ssh2_auth_password($connect,'pi','sean1002');//user= pi, pass= sean1002
   
 
    
-    $less_than_4 = TRUE;   
-    $more_than_6 = TRUE;
+    
     $same = TRUE;
-    if(4 > strlen($key_pass) )
-            {   $less_than_4 = FALSE; }
-
-    else if(6 < strlen($key_pass))
-            {    $more_than_6 = FALSE; }
-
     if ($pass != hash('sha256',$key_pass))
             {    $same = FALSE; }
     
@@ -46,16 +38,12 @@ ssh2_auth_password($connect,'pi','sean1002');//user= pi, pass= sean1002
             if(isset($_POST['Open']) )
             {  
                 
-                if($key_pass == NULL || $key_pass==' ')
+                if($key_pass == NULL)
                     echo '密碼空白！！<br/><input type="submit" name="Open" value=" Open " />';
-                else if(!$less_than_4)
-                    echo '密碼小於4！！<br/><input type="submit" name="Open" value=" Open " />'; 
-                else if(!$more_than_6)
-                    echo '密碼大於6！！<br/><input type="submit" name="Open" value=" Open " />';
                 else if(!$same)
                     echo '密碼錯誤！！<br/><input type="submit" name="Open" value=" Open " />';
 
-                else if($less_than_4 && $more_than_6 && $same) // 正確無誤
+                else if($key_pass!=NULL && $same) // 正確無誤
                 {
                     $stream = ssh2_exec($connect,'python3 opendoor.py '.strval($num));// exec open door
                     $sql="update berry set state=true where num=".strval($num);
@@ -77,14 +65,10 @@ ssh2_auth_password($connect,'pi','sean1002');//user= pi, pass= sean1002
             {
                  if($key_pass == NULL)
                     echo '密碼空白！！<br/><input type="submit" name="Close" value=" Close " />';
-                else if(!$less_than_4)
-                    echo '密碼小於四個字！！<br/><input type="submit" name="Close" value=" Close " />'; 
-                else if(!$more_than_6)
-                    echo '密碼大於6個字！！<br/><input type="submit" name="Close" value=" Close " />';
                 else if(!$same)
                     echo '密碼錯誤！！<br/><input type="submit" name="Close" value=" Close " />';
 
-                else if($less_than_4 && $more_than_6 && $same) // 正確無誤
+                else if($key_pass!=NULL && $same) // 正確無誤
                 {
                     $stream = ssh2_exec($connect,'python3 closedoor.py '.strval($num));// exec close door
                     $sql="update berry set state=false where num=".strval($num);
